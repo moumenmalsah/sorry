@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&family=Dancing+Script:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-amiri: "Amiri", serif;
+  --font-cairo: "Cairo", sans-serif;
+  --font-dancing: "Dancing Script", cursive;
+  
+  --color-romantic-red: #8b0000;
+  --color-romantic-pink: #ffb6c1;
+  --color-romantic-gold: #d4af37;
+  --color-romantic-cream: #fffaf0;
+}
+
+body {
+  @apply bg-romantic-cream text-romantic-red overflow-x-hidden;
+  font-family: var(--font-cairo);
+  direction: rtl;
+}
+
+.romantic-gradient {
+  background: radial-gradient(circle at center, #fffaf0 0%, #ffe4e1 100%);
+}
+
+.glass-card {
+  @apply bg-white/30 backdrop-blur-md border border-white/20 rounded-3xl shadow-xl;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.heart-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: float linear infinite;
+}
